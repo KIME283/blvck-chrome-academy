@@ -1,8 +1,5 @@
 {
   "name": "BLVCK CHROME - Elite Salon Academy",
-  "version": 2,
   "buildCommand": "",
-  "framework": "static",
-  "outputDirectory": ".",
-  "public": true
+  "outputDirectory": "."
 }
