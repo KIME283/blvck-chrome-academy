@@ -326,6 +326,18 @@
             transform: translateZ(0) scale(1.04) rotate(1.5deg);
             filter: grayscale(0%) brightness(1);
         }
+        /* Prevent overflow on mobile */
+        @media (max-width: 768px) {
+            .service-card-item:hover .service-card-image {
+                transform: translateZ(0) scale(1.02);
+            }
+            body {
+                overflow-x: hidden;
+            }
+            main {
+                width: 100vw;
+            }
+        }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #121414; }
         ::-webkit-scrollbar-thumb { background: #d2f006; }
@@ -340,15 +352,94 @@
         button, a {
             min-height: 44px;
         }
-        @media (max-width: 768px) {
-            .parallax-content {
-                padding-bottom: 4rem;
+        @media (max-width: 1024px) {
+            html {
+                font-size: 15px;
             }
-            .service-card-item {
-                min-height: 350px;
+        }
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
             }
             main {
                 margin-left: 0 !important;
+            }
+            .parallax-hero {
+                height: 80vh;
+            }
+            .parallax-content {
+                height: 80vh;
+                padding-bottom: 2rem;
+                padding-top: 5rem;
+                justify-content: center;
+            }
+            .parallax-content > div {
+                width: 100%;
+            }
+            section {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            .py-section-gap {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+            .gap-section-gap {
+                gap: 2rem !important;
+            }
+            h1.text-display-xl-mobile {
+                font-size: 48px;
+                line-height: 52px;
+                letter-spacing: -0.02em;
+                margin-bottom: 1rem;
+            }
+            h2.text-headline-lg-mobile {
+                font-size: 32px;
+                line-height: 36px;
+            }
+            .service-card-item {
+                min-height: 320px;
+            }
+            .curriculum-card {
+                min-height: 280px;
+            }
+            .gallery-section {
+                grid-auto-flow: row;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 480px) {
+            html {
+                font-size: 13px;
+            }
+            h1.text-display-xl-mobile {
+                font-size: 36px;
+                line-height: 40px;
+                margin-bottom: 0.75rem;
+            }
+            h2.text-headline-lg-mobile {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            .py-section-gap {
+                padding-top: 2.5rem !important;
+                padding-bottom: 2.5rem !important;
+            }
+            .gap-section-gap {
+                gap: 1.5rem !important;
+            }
+            .parallax-content {
+                padding-top: 4.5rem;
+                padding-bottom: 1.5rem;
+            }
+            .service-card-item {
+                min-height: 280px;
+            }
+            button {
+                padding: 12px 16px;
             }
         }
     </style>
