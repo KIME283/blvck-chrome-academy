@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BLVCK CHROME | Booking &amp; Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#282a2b",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-secondary-container": "#5b6900",
+                        "on-background": "#e2e2e2",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary-container": "#050505",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "secondary": "#fcffdd",
+                        "on-tertiary-fixed": "#3c0029",
+                        "secondary-fixed": "#d2f006",
+                        "secondary-container": "#cfed00",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#12000a",
+                        "surface-container": "#1e2020",
+                        "outline": "#8e9192",
+                        "surface": "#121414",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#797777",
+                        "on-tertiary": "#610045",
+                        "on-secondary": "#2c3400",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-container-highest": "#333535",
+                        "tertiary": "#ffaed8",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#e000a4",
+                        "tertiary-fixed-dim": "#ffaed8",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed": "#191e00",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "primary": "#c9c6c5",
+                        "tertiary-fixed": "#ffd8e9",
+                        "inverse-on-surface": "#2f3131",
+                        "background": "#121414",
+                        "on-primary": "#313030",
+                        "on-tertiary-fixed-variant": "#890063",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "secondary-fixed-dim": "#b8d300",
+                        "on-secondary-fixed-variant": "#414c00",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#37393a",
+                        "surface-tint": "#c9c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Syne"],
+                        "headline-md": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-xl": ["Syne"],
+                        "display-xl-mobile": ["Syne"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["40px", {"lineHeight": "44px", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            cursor: crosshair;
+        }
+        .glitch-hover:hover {
+            animation: glitch 0.2s linear infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+        .perspective-grid {
+            background-image: linear-gradient(to right, #ffffff05 1px, transparent 1px), 
+                              linear-gradient(to bottom, #ffffff05 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(18, 20, 20, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar (Shared Component) -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-xl border-b-2 border-outline-variant flex justify-between items-center px-margin-desktop py-unit">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface uppercase">BLVCK CHROME</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary-fixed transition-colors" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary-fixed transition-colors" href="#">Courses</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary-fixed transition-colors" href="#">Artists</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed border-b-2 border-secondary-fixed pb-1" href="#">RESERVE</a>
+</div>
+</nav>
+<!-- Side Navigation Bar (Shared Component - Hidden on mobile) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col py-10 justify-between border-r-2 border-surface-variant bg-surface z-40">
+<div class="px-8">
+<div class="font-headline-lg text-headline-lg uppercase tracking-tighter text-on-surface mb-2">BC</div>
+<div class="font-label-caps text-label-caps text-secondary opacity-70">Luxury Brutalist Hair</div>
+</div>
+<div class="flex flex-col gap-6">
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-all duration-200 pl-4 hover:translate-x-2" href="#">
+<span class="material-symbols-outlined">monorail</span>
+<span class="font-label-caps text-label-caps">Vanguard Artistry</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-all duration-200 pl-4 hover:translate-x-2" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-caps text-label-caps">Elite Training</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-all duration-200 pl-4 hover:translate-x-2" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-caps text-label-caps">The Collective</span>
+</a>
+<a class="flex items-center gap-4 text-secondary-fixed font-bold border-l-4 border-secondary-fixed pl-4 translate-x-2" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-caps text-label-caps">Studio Booking</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-all duration-200 pl-4 hover:translate-x-2" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+<span class="font-label-caps text-label-caps">Contact</span>
+</a>
+</div>
+<div class="px-8 flex flex-col gap-4">
+<a class="flex items-center gap-2 font-label-caps text-[10px] uppercase text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined !text-sm">camera</span> Instagram
+            </a>
+<a class="flex items-center gap-2 font-label-caps text-[10px] uppercase text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined !text-sm">videocam</span> TikTok
+            </a>
+</div>
+</aside>
+<main class="lg:ml-64 pt-24 min-h-screen relative">
+<!-- Hero Section with Background Texture -->
+<section class="relative h-[70vh] w-full flex items-end overflow-hidden px-margin-desktop pb-12 border-b-4 border-secondary-fixed">
+<img alt="Salon Interior" class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3jo_hp5ywwYu6BnLVN9NMkCjhYrdBFDoNxTxgMk4hreRq13esptBQmvfwp7td6n5wDJWxqZvYAPjuHfThFMzh-Jp7mVFhjPBM2MUkj61zRG-iJs0sed5885t1-MGUeGIbfEAv6Ox8NWCNtKYfa7z90Khx_NYGmqNEeLMhmkSfBWDi8TH72JyydDILca1CIaaaM-kBBlfRWvBU1A56Sml5yBFVbe5rO5zgdTmXyRQKyAPcNNlSTO0SsxtPLC9ip4NPP45g8ivjpzE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="relative z-10 max-w-5xl">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4 block">RESERVATION GATEWAY</span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl uppercase leading-none">The<br/>Booking<br/>Ritual</h1>
+</div>
+<!-- Absolute Positioned Graphic Element -->
+<div class="hidden md:block absolute top-20 right-margin-desktop w-48 h-48 border-[10px] border-secondary-fixed opacity-20 rotate-45"></div>
+</section>
+<!-- Service Menu Section (Bento Grid) -->
+<section class="px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-4 flex flex-col gap-unit">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-12">Artistry<br/>Menu</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xs">
+                        Pricing is tier-based, reflecting the vanguard expertise of our resident and guest artists.
+                    </p>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<!-- Service Card: Cut -->
+<div class="p-8 border-2 border-outline-variant hover:border-secondary-fixed transition-all group relative overflow-hidden h-96 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-secondary-fixed"></div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary-fixed">01. SCULPT</span>
+<h3 class="font-headline-md text-headline-md uppercase mt-4">Precision Cut</h3>
+</div>
+<div>
+<p class="font-body-md text-on-surface-variant mb-6">Structural metamorphosis designed for the individual silhouette. Includes ritual wash and architectural finishing.</p>
+<div class="flex justify-between items-end">
+<span class="font-display-xl text-4xl uppercase opacity-20 group-hover:opacity-100 transition-opacity">95+</span>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service Card: Color -->
+<div class="p-8 border-2 border-outline-variant hover:border-secondary-fixed transition-all group relative overflow-hidden h-96 flex flex-col justify-between">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-tertiary"></div>
+<div>
+<span class="font-label-caps text-label-caps text-tertiary">02. CHROMATIC</span>
+<h3 class="font-headline-md text-headline-md uppercase mt-4">Vanguard Color</h3>
+</div>
+<div>
+<p class="font-body-md text-on-surface-variant mb-6">From obsidian saturation to liquid chrome balayage. Custom formulation for high-tension visual impact.</p>
+<div class="flex justify-between items-end">
+<span class="font-display-xl text-4xl uppercase opacity-20 group-hover:opacity-100 transition-opacity">180+</span>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service Card: Consult -->
+<div class="p-8 border-2 border-outline-variant hover:border-secondary-fixed transition-all group relative overflow-hidden h-96 flex flex-col justify-between sm:col-span-2">
+<div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-on-background"></div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-label-caps text-on-background">03. ARCHITECT</span>
+<h3 class="font-headline-md text-headline-md uppercase mt-4">Creative Consultation</h3>
+</div>
+<img class="w-32 h-32 object-cover grayscale brightness-75 border border-outline-variant" data-alt="A close up high resolution macro photograph of avant-garde hair textures showing extreme detail and precision. The lighting is dramatic and moody with deep blacks and high-contrast highlights, fitting a luxury brutalist studio aesthetic. The focus is sharp on the intricate patterns of the hair artistry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzbKrJRwDvMv38lwHe3RRH5YOXRjS8hwZ1tUHTZsRo_tlASvejX5p47odpn329IX8raTmgIUWqvYuyjLmFhFA5oH_DenmYug4gMg4lZQmHtKnHsidIarlBWa49rnYi4ykmz8dGbXB7r-33YlpdDP6CgAMwnpHAERHyLx4nr2-Imk2IP3a44z4h3rt6Ein59QZdmO027zAuDTbvJeHyIXadnsCLC3LijYpPFiSWix7HH30YuQYqyV6uvP_QJfvpSa3D1zQ3hAFuSss"/>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<p class="font-body-md text-on-surface-variant max-w-md">The genesis of every transformation. Deep-dive session to map out long-term aesthetic goals and technical requirements.</p>
+<button class="bg-on-surface text-surface py-4 px-12 font-label-caps text-label-caps uppercase hover:bg-secondary-fixed transition-colors glitch-hover whitespace-nowrap">START JOURNEY</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Form Section -->
+<section class="px-margin-desktop py-section-gap bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 perspective-grid opacity-20 pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl mx-auto border-4 border-secondary py-16 px-8 md:px-16 glass-panel">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-4">Request Access</h2>
+<p class="font-label-caps text-label-caps text-secondary">COMPLETE THE DATA FIELDS BELOW</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">FULL NAME</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none placeholder-surface-variant" placeholder="IDENTITY" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">DIGITAL TRANSMISSION (EMAIL)</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none placeholder-surface-variant" placeholder="USER@DOMAIN.COM" type="email"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">SERVICE CATEGORY</label>
+<select class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none appearance-none">
+<option class="bg-surface">SELECT PROTOCOL</option>
+<option class="bg-surface">PRECISION CUT</option>
+<option class="bg-surface">CHROMATIC VANGUARD</option>
+<option class="bg-surface">CREATIVE CONSULT</option>
+<option class="bg-surface">EDUCATION / WORKSHOP</option>
+</select>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PREFERRED TIMEFRAME</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none placeholder-surface-variant" placeholder="QUARTER / MONTH" type="text"/>
+</div>
+<div class="md:col-span-2 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">AESTHETIC INTENT</label>
+<textarea class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-4 font-body-md text-body-md outline-none placeholder-surface-variant resize-none" placeholder="DESCRIBE THE DESIRED TRANSFORMATION..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex flex-col items-center mt-8">
+<button class="w-full md:w-auto bg-on-surface text-surface py-6 px-24 font-headline-md text-headline-md uppercase hover:bg-secondary-fixed transition-all transform hover:scale-105 active:scale-95 border-b-4 border-r-4 border-on-surface-variant" type="submit">SUBMIT REQUEST</button>
+<p class="mt-6 font-label-caps text-[10px] text-on-surface-variant opacity-60">SUBMISSION DOES NOT GUARANTEE AN APPOINTMENT. WE CURATE CLIENT JOURNEYS CAREFULLY.</p>
+</div>
+</form>
+</div>
+</section>
+<!-- Digital Contact Section -->
+<section class="px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4">DIRECT CHANNELS</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-12">Digital<br/>Presence</h2>
+<div class="flex flex-col gap-8">
+<div class="group cursor-pointer">
+<p class="font-label-caps text-label-caps text-on-surface-variant">INSTAGRAM DM</p>
+<p class="font-headline-md text-headline-md group-hover:text-secondary-fixed transition-colors">@BLVCKCHROME.ARTISTRY</p>
+</div>
+<div class="group cursor-pointer">
+<p class="font-label-caps text-label-caps text-on-surface-variant">ENCRYPTED MESSAGE (WHATSAPP)</p>
+<p class="font-headline-md text-headline-md group-hover:text-secondary-fixed transition-colors">+1 800 VANGUARD</p>
+</div>
+<div class="group cursor-pointer">
+<p class="font-label-caps text-label-caps text-on-surface-variant">PRESS &amp; PARTNERSHIPS</p>
+<p class="font-headline-md text-headline-md group-hover:text-secondary-fixed transition-colors">VIBE@BLVCKCHROME.COM</p>
+</div>
+</div>
+</div>
+<div class="relative min-h-[400px] border-l-2 border-outline-variant pl-gutter">
+<div class="h-full w-full flex items-center justify-center bg-surface-container-high relative overflow-hidden group">
+
+<div class="relative z-10 text-center p-8 border-2 border-secondary-fixed">
+<p class="font-headline-md text-headline-md uppercase italic">"Art is not a luxury.<br/>It is a necessity of<br/>the spirit."</p>
+</div>
+<!-- Decorative chrome-like element -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary-fixed rounded-full blur-[100px] opacity-20"></div>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full relative bg-surface-container-lowest border-t-4 border-secondary px-margin-desktop py-margin-desktop gap-unit flex flex-col">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+<div class="font-display-xl text-display-xl-mobile md:text-display-xl font-extrabold text-on-surface uppercase leading-none">BLVCK<br/>CHROME</div>
+<div class="grid grid-cols-2 gap-x-24 gap-y-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Press Inquiries</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Sustainability</a>
+</div>
+</div>
+<div class="mt-16 flex flex-col md:flex-row justify-between items-center border-t border-outline-variant pt-8">
+<p class="font-label-caps text-[10px] text-on-surface-variant opacity-60">© 2024 BLVCK CHROME ARTISTRY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<span class="material-symbols-outlined text-secondary-fixed">fingerprint</span>
+<span class="material-symbols-outlined text-on-surface-variant">noise_aware</span>
+<span class="material-symbols-outlined text-on-surface-variant">verified</span>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interaction for form focus
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').style.color = '#d2f006';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').style.color = '';
+            });
+        });
+
+        // Simple Glitch effect on scroll for certain elements
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.font-display-xl');
+            elements.forEach(el => {
+                const speed = 0.05;
+                const offset = window.pageYOffset * speed;
+                el.style.transform = `skewX(${Math.sin(offset) * 2}deg)`;
+            });
+        });
+    </script>
+</body></html>

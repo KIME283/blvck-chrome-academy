@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="color-scheme" content="dark"/>
+    <title>BLVCK CHROME | Elite Salon Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#282a2b",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-secondary-container": "#5b6900",
+                        "on-background": "#e2e2e2",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary-container": "#050505",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "secondary": "#fcffdd",
+                        "on-tertiary-fixed": "#3c0029",
+                        "secondary-fixed": "#d2f006",
+                        "secondary-container": "#cfed00",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#12000a",
+                        "surface-container": "#1e2020",
+                        "outline": "#8e9192",
+                        "surface": "#121414",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#797777",
+                        "on-tertiary": "#610045",
+                        "on-secondary": "#2c3400",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-container-highest": "#333535",
+                        "tertiary": "#ffaed8",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#e000a4",
+                        "tertiary-fixed-dim": "#ffaed8",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed": "#191e00",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "primary": "#c9c6c5",
+                        "tertiary-fixed": "#ffd8e9",
+                        "inverse-on-surface": "#2f3131",
+                        "background": "#121414",
+                        "on-primary": "#313030",
+                        "on-tertiary-fixed-variant": "#890063",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "secondary-fixed-dim": "#b8d300",
+                        "on-secondary-fixed-variant": "#414c00",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#37393a",
+                        "surface-tint": "#c9c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Syne"],
+                        "headline-md": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-xl": ["Syne"],
+                        "display-xl-mobile": ["Syne"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["40px", {"lineHeight": "44px", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        * {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+        html::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(to right, #d2f006, #ffaed8);
+            transform-origin: left;
+            z-index: 9999;
+            will-change: transform;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                will-change: opacity, transform;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                will-change: auto;
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+                will-change: opacity, transform;
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                will-change: auto;
+            }
+        }
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateZ(0) translateY(0px);
+            }
+            50% {
+                transform: translateZ(0) translateY(-6px);
+            }
+        }
+        @keyframes softGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(210, 240, 6, 0.08);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(210, 240, 6, 0.15);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.65;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.015);
+            }
+        }
+        @keyframes softSlide {
+            0% {
+                transform: translateX(-4px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.9s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+        }
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.9s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+        }
+        .animate-slide-in-right {
+            animation: slideInRight 0.9s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+        }
+        .animate-slide-in-down {
+            animation: slideInDown 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+        }
+        .animate-float {
+            animation: float 3.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+        }
+        .animate-soft-glow {
+            animation: softGlow 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+        }
+        .animate-pulse {
+            animation: pulse 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+        }
+        .animate-breathe {
+            animation: breathe 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+        }
+        .animate-soft-slide {
+            animation: softSlide 0.9s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+        }
+        .parallax-hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .parallax-bg {
+            position: absolute;
+            width: 100%;
+            height: 120%;
+            top: 0;
+            left: 0;
+            will-change: transform;
+        }
+        .parallax-content {
+            position: relative;
+            z-index: 10;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 6rem;
+            will-change: transform;
+        }
+        .accent-line {
+            position: relative;
+            overflow: hidden;
+        }
+        .accent-line::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #d2f006;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            will-change: transform;
+        }
+        .accent-line:hover::before {
+            transform: scaleX(1);
+        }
+        .curriculum-card {
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            will-change: transform;
+        }
+        .curriculum-card:hover {
+            transform: translateZ(0) translateY(-8px);
+        }
+        .hover-lift {
+            position: relative;
+        }
+        .curriculum-card:hover .hover-lift {
+            transform: translateX(8px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        }
+        .service-card-item {
+            will-change: transform;
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1.0), border-color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        }
+        .service-card-item:hover {
+            transform: translateZ(0) translateY(-10px);
+        }
+        .service-card-image {
+            will-change: transform, filter;
+            transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0), filter 0.7s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        }
+        .service-card-item:hover .service-card-image {
+            transform: translateZ(0) scale(1.04) rotate(1.5deg);
+            filter: grayscale(0%) brightness(1);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #121414; }
+        ::-webkit-scrollbar-thumb { background: #d2f006; }
+        /* Mobile optimizations */
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button, a {
+            min-height: 44px;
+        }
+        @media (max-width: 768px) {
+            .parallax-content {
+                padding-bottom: 4rem;
+            }
+            .service-card-item {
+                min-height: 350px;
+            }
+            main {
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden">
+
+<!-- Thick Flowing Striped Line from BOOK Button -->
+<div id="flowingLine" class="fixed left-0 top-0 z-40 pointer-events-none" style="width: 80px; height: 0; background-image: repeating-linear-gradient(90deg, #ffaed8 0px, #ffaed8 20px, #050505 20px, #050505 40px); background-size: 40px 100%; opacity: 0.85; will-change: height, left;"></div>
+
+<!-- Side Navigation Bar -->
+<nav class="hidden md:flex flex-col h-screen py-16 justify-between fixed left-0 top-0 w-56 border-r border-outline-variant bg-background z-50">
+    <div class="px-8 space-y-16">
+        <div>
+            <span class="font-headline-md text-headline-md uppercase tracking-tight text-on-surface animate-soft-slide">BLVCK</span>
+        </div>
+        <div class="flex flex-col gap-8">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 relative group animate-soft-slide" style="animation-delay: 0.1s" href="#artistry">
+                Artistry
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-500"></span>
+            </a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 relative group animate-soft-slide" style="animation-delay: 0.15s" href="#training">
+                Training
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-500"></span>
+            </a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors duration-300 relative group animate-soft-slide" style="animation-delay: 0.2s" href="#booking">
+                Booking
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-500"></span>
+            </a>
+        </div>
+    </div>
+    <div class="px-8">
+        <button class="w-full py-3 bg-on-surface text-background font-label-caps text-label-caps hover:bg-secondary-fixed transition-colors duration-300 animate-breathe hover:animate-none group relative overflow-hidden">
+            <span class="relative z-10">BOOK</span>
+            <div class="absolute inset-0 bg-secondary-fixed transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 -z-10"></div>
+        </button>
+    </div>
+</nav>
+
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-surface backdrop-blur-xl border-b border-outline-variant fixed top-0 z-50">
+    <span class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface">BLVCK</span>
+    <button class="material-symbols-outlined text-on-surface text-3xl p-2 touch-target" id="mobileMenuBtn">menu</button>
+</header>
+
+<!-- Mobile Menu -->
+<nav id="mobileMenu" class="md:hidden fixed left-0 top-16 w-full bg-surface border-b border-outline-variant z-40 max-h-0 overflow-hidden transition-all duration-300">
+    <div class="px-margin-mobile py-8 space-y-6">
+        <a class="block font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#artistry">Artistry</a>
+        <a class="block font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#training">Training</a>
+        <a class="block font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#booking">Booking</a>
+        <button class="w-full py-3 bg-on-surface text-background font-label-caps text-label-caps hover:bg-secondary-fixed transition-colors">BOOK</button>
+    </div>
+</nav>
+
+<main class="md:ml-56">
+
+<!-- ====== PARALLAX HERO SECTION ====== -->
+<section id="artistry" class="parallax-hero border-b border-outline-variant pt-24 md:pt-0">
+    <div class="parallax-bg" id="parallaxBg">
+        <img alt="Editorial hair work" class="w-full h-full object-cover grayscale brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC73NDuvmS_cq_a3h4gaeNtuT4dQc3VNZAv5fJTA9WtFwuUUi8KMGRZWnYq4VPpOMOMswig-4PEzpD5E0DuTLOp1GsfvC7YlyebDlQD1BaDO08MJ4ee9MHL4ZEbU-Efopq9449vSknMgL3jA5FirvTVbKhm1Jz94L2Ma_1ne1KvnOAUlnfYUl6WXD1LH_xXp0m2-cH69KIPQAhiGswI8fz_f7CPDdW4QzZqM1sdml5kH-uHKBOLaAqO45HAMx6KWo1NvH1ZOytq8hE"/>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+    </div>
+    <div class="parallax-content" id="parallaxContent">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-3xl">
+            <h1 class="font-display-xl text-display-xl-mobile md:text-display-xl uppercase leading-tight text-on-surface mb-8">
+                VANGUARD<br/>ARTISTRY
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Precision. Rebellion. Excellence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Artistry Gallery Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop gallery-section border-b border-outline-variant">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
+        <div class="relative group h-[600px] overflow-hidden opacity-0 animate-slide-in-right">
+            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Geometric void artistry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAROsvWd78vhlzGVuaaEEIuRv4LI7VuxjgfdTR5pXCXQ5TRK6yFTEFOzzzPVFu4givdlP-qbJ9nVak-nIVqsc2Db8Y94bgsyxjil3Wb7LoB9xsJKysvpiHomZZorMwNF37ShG0owfy-fzKFwtKMZVgMTEe7aC2RINuWO0Wp9cpvyXaqubhDWCSzCIqSMQIQ7dRMSKAMGgRRsmufw5os13RYvr3nSPHcLeXmhrvA4Q7WtPVJCI2Yq_TUEAPXUH6vaoxc6q2uwVbrBS8"/>
+            <div class="absolute inset-0 bg-gradient-to-l from-background via-transparent to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
+        </div>
+        <div class="flex flex-col justify-center opacity-0 animate-fade-in-up">
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-8 leading-tight accent-line inline-block">
+                Geometric<br/>Precision
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+                Micro-pigmentation techniques that challenge natural light behavior. Each cut is an act of precision.
+            </p>
+            <div class="relative overflow-hidden h-1 w-12 bg-surface-variant group">
+                <div class="absolute inset-0 bg-secondary-fixed origin-left transform scale-x-0 animate-slide-in-down group-hover:animate-pulse" style="animation-delay: 0.3s; animation-fill-mode: forwards;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Artistry Details Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant artistry-details">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
+        <div class="relative overflow-hidden group">
+            <img class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-0 animate-slide-in-right" alt="Precision architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMazv_mjDfY8g3eTB5-HKe7E-6M0g3b7oyJIWPYURj0eTSimVyKJhOWio-GDLZavdb8YS6IjmAVtCzxBnWI9ZQ652Ctgld5S7dc6scY2YObgfSsDoEQ0n-yRvt5JIpx6lvaMzXk3tWP-0gwzmg4ovUdfh5uUUw5em1VY947g0aSnBMdomeCANjDQ-EHC7E_4sq1zH2PH-meExuvKfyYucCkS8vruxUKEBW_T8NBuh7TV2hV0w5hoozHJrfcgK8Wf-DTf5q_Gkjz8Q"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-background opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div>
+        </div>
+        <div class="flex flex-col gap-12">
+            <div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">
+                <h2 class="font-headline-lg text-headline-lg uppercase mb-6 accent-line">Crafted<br/>in Darkness</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                    We operate at the intersection of high fashion and street energy.
+                </p>
+            </div>
+            <div class="space-y-8">
+                <div class="group border-l-2 border-transparent hover:border-secondary-fixed pl-6 py-4 transition-all duration-300 opacity-0 animate-fade-in-left" style="animation-delay: 0.2s">
+                    <h4 class="font-label-caps text-label-caps text-secondary-fixed mb-2 group-hover:text-on-surface transition-colors">SCALPEL CUT</h4>
+                    <p class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Laser-straight alignment with razor-etched layers.</p>
+                </div>
+                <div class="group border-l-2 border-transparent hover:border-secondary-fixed pl-6 py-4 transition-all duration-300 opacity-0 animate-fade-in-left" style="animation-delay: 0.3s">
+                    <h4 class="font-label-caps text-label-caps text-secondary-fixed mb-2 group-hover:text-on-surface transition-colors">CHROME INFUSION</h4>
+                    <p class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Specialized pigment layering for metallic surfaces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== ELITE TRAINING SECTION ====== -->
+<section id="training" class="relative py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+    <div class="max-w-3xl">
+        <h1 class="font-display-xl text-display-xl-mobile md:text-display-xl uppercase leading-tight text-on-surface mb-8">
+            Elite<br/>Training
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-16">
+            Transcend traditional cosmetology. Master the architecture of movement and the physics of chrome-grade finishing.
+        </p>
+    </div>
+</section>
+
+<!-- Curriculum Grid -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap curriculum-section">
+    <div class="mb-20 overflow-hidden">
+        <h2 class="font-headline-lg text-headline-lg uppercase opacity-0 animate-fade-in-up animate-float">Course Modules</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+        <!-- Module 1 -->
+        <div class="curriculum-card group relative opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">
+            <div class="absolute -left-8 top-0 text-8xl font-headline-lg text-secondary-fixed opacity-0 group-hover:opacity-20 transition-opacity duration-500">01</div>
+            <div class="border-l-4 border-secondary-fixed pl-8 py-6 relative z-10 hover-lift">
+                <div class="h-1 w-16 bg-secondary-fixed mb-6 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                <h3 class="font-headline-md text-headline-md mb-4 uppercase group-hover:text-secondary-fixed transition-colors duration-300">Structural Geometry</h3>
+                <p class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors duration-300">Precision cutting through surgical technique. Skull mapping and weight distribution.</p>
+            </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="curriculum-card group relative opacity-0 animate-fade-in-up md:translate-y-12" style="animation-delay: 0.2s">
+            <div class="absolute -left-8 top-0 text-8xl font-headline-lg text-secondary-fixed opacity-0 group-hover:opacity-20 transition-opacity duration-500">02</div>
+            <div class="border-l-4 border-secondary-fixed pl-8 py-6 relative z-10 hover-lift">
+                <div class="h-1 w-16 bg-secondary-fixed mb-6 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                <h3 class="font-headline-md text-headline-md mb-4 uppercase group-hover:text-secondary-fixed transition-colors duration-300">Color Alchemy</h3>
+                <p class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors duration-300">High-contrast tonality and iridescent transitions at obsidian depth.</p>
+            </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="curriculum-card group relative opacity-0 animate-fade-in-up md:-translate-y-12" style="animation-delay: 0.3s">
+            <div class="absolute -left-8 top-0 text-8xl font-headline-lg text-secondary-fixed opacity-0 group-hover:opacity-20 transition-opacity duration-500">03</div>
+            <div class="border-l-4 border-secondary-fixed pl-8 py-6 relative z-10 hover-lift">
+                <div class="h-1 w-16 bg-secondary-fixed mb-6 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                <h3 class="font-headline-md text-headline-md mb-4 uppercase group-hover:text-secondary-fixed transition-colors duration-300">Chrome Techniques</h3>
+                <p class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors duration-300">Signature liquid-metal finish. High-speed handling and chemical layering.</p>
+            </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="curriculum-card group relative opacity-0 animate-fade-in-up" style="animation-delay: 0.4s">
+            <div class="absolute -left-8 top-0 text-8xl font-headline-lg text-secondary-fixed opacity-0 group-hover:opacity-20 transition-opacity duration-500">04</div>
+            <div class="border-l-4 border-secondary-fixed pl-8 py-6 relative z-10 hover-lift">
+                <div class="h-1 w-16 bg-secondary-fixed mb-6 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                <h3 class="font-headline-md text-headline-md mb-4 uppercase group-hover:text-secondary-fixed transition-colors duration-300">Industrial Styling</h3>
+                <p class="font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors duration-300">Editorial design for extreme environments. Movement and longevity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Lab Section with Parallax -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant studio-section">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center relative z-10">
+        <div class="studio-text">
+            <h2 class="font-headline-lg text-headline-lg uppercase mb-8 leading-tight opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">The Studio</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">
+                Raw concrete. Optical mirrors. State-of-the-art equipment. An arena for growth.
+            </p>
+            <div class="space-y-8">
+                <div class="border-l-2 border-secondary-fixed pl-6 py-4 opacity-0 animate-fade-in-left feature-item" style="animation-delay: 0.3s">
+                    <p class="font-label-caps text-label-caps text-secondary-fixed">360° Macro System</p>
+                </div>
+                <div class="border-l-2 border-secondary-fixed pl-6 py-4 opacity-0 animate-fade-in-left feature-item" style="animation-delay: 0.4s">
+                    <p class="font-label-caps text-label-caps text-secondary-fixed">Chemical Lab</p>
+                </div>
+                <div class="border-l-2 border-secondary-fixed pl-6 py-4 opacity-0 animate-fade-in-left feature-item" style="animation-delay: 0.5s">
+                    <p class="font-label-caps text-label-caps text-secondary-fixed">Ergonomic Stations</p>
+                </div>
+            </div>
+        </div>
+        <div class="studio-image-wrapper relative overflow-hidden opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">
+            <img class="w-full h-[500px] object-cover grayscale studio-image" alt="Studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGk5pt4TP1MBzh26BOyIZzw7sVMAMlW0g6S6lk3S6KZeVin2Jru4PC-UF0OpCXBm4o3-tTVdZZ9U7FEqcZGaE5fVzwIp3J9hD4wNCO4dPdgqzYeRWBrUc1m4TDml5Xm4YIkEskXaPgr8D0KTfX9E96jGw_VWm8nJb5KzdFDC0FoO-y8sTy_nGDhnHVXQ5WXgXUNR_tZn01-7UEwlPaBpJywT5wmfGIZVs7W-W-GaKvUcm4H3fs_LIX6utcXp2bLCS7dzxzXo8fl4"/>
+        </div>
+    </div>
+</section>
+
+<!-- Training CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-lowest relative overflow-hidden training-cta">
+    <div class="absolute inset-0 overflow-hidden opacity-10">
+        <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, #d2f006 0, #d2f006 1px, transparent 0, transparent 50%); background-size: 40px 40px;"></div>
+    </div>
+    <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <span class="font-label-caps text-label-caps text-secondary-fixed mb-6 block tracking-[0.3em] opacity-0 animate-fade-in-up animate-pulse">LIMITED COHORTS AVAILABLE</span>
+        <h2 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-12 italic opacity-0 animate-fade-in-up animate-float" style="animation-delay: 0.1s">EVOLVE OR DECAY.</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-6 opacity-0 animate-scale-in" style="animation-delay: 0.2s">
+            <button class="group relative px-12 py-6 bg-on-background text-background font-label-caps text-label-caps text-lg glitch-hover transform hover:scale-105 transition-all overflow-hidden animate-breathe hover:animate-none">
+                <span class="relative z-10">REQUEST ENROLLMENT</span>
+                <div class="absolute inset-0 bg-secondary-fixed transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 -z-10"></div>
+            </button>
+            <button class="group relative px-12 py-6 border-2 border-secondary-fixed text-secondary-fixed font-label-caps text-label-caps text-lg hover:text-background transition-all overflow-hidden animate-breathe hover:animate-none">
+                <span class="relative z-10">DOWNLOAD SYLLABUS</span>
+                <div class="absolute inset-0 bg-secondary-fixed transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 -z-10"></div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ====== BOOKING & STUDIO SECTION ====== -->
+<section id="booking" class="py-section-gap px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+    <h1 class="font-display-xl text-display-xl-mobile md:text-display-xl uppercase leading-tight text-on-surface mb-6">
+        Studio<br/>Booking
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Reserve your time. Select your service. Begin your transformation.
+    </p>
+</section>
+
+<!-- Service Menu Section with Parallax -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap service-menu-section border-b border-outline-variant">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start mb-16">
+        <div class="md:col-span-4 flex flex-col gap-unit opacity-0 animate-fade-in-up">
+            <h2 class="font-headline-lg text-headline-lg uppercase mb-12">Artistry<br/>Menu</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xs">
+                Pricing is tier-based, reflecting the vanguard expertise of our resident and guest artists.
+            </p>
+        </div>
+    </div>
+
+    <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 service-cards">
+        <!-- Service Card 1 -->
+        <div class="service-card-item p-8 border border-outline-variant hover:border-secondary-fixed transition-all group relative overflow-hidden h-96 flex flex-col justify-between opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-secondary-fixed"></div>
+            <div class="relative z-10">
+                <span class="font-label-caps text-label-caps text-secondary-fixed">01. SCULPT</span>
+                <h3 class="font-headline-md text-headline-md uppercase mt-4 group-hover:text-secondary-fixed transition-colors">Precision Cut</h3>
+            </div>
+            <div class="relative z-10">
+                <p class="font-body-md text-on-surface-variant mb-6 group-hover:text-on-surface transition-colors">Structural metamorphosis designed for the individual silhouette. Includes ritual wash and architectural finishing.</p>
+                <div class="flex justify-between items-end">
+                    <span class="font-display-xl text-4xl uppercase opacity-20 group-hover:opacity-100 transition-opacity">95+</span>
+                    <span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card-item p-8 border border-outline-variant hover:border-secondary-fixed transition-all group relative overflow-hidden h-96 flex flex-col justify-between opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-tertiary"></div>
+            <div class="relative z-10">
+                <span class="font-label-caps text-label-caps text-tertiary">02. CHROMATIC</span>
+                <h3 class="font-headline-md text-headline-md uppercase mt-4 group-hover:text-secondary-fixed transition-colors">Vanguard Color</h3>
+            </div>
+            <div class="relative z-10">
+                <p class="font-body-md text-on-surface-variant mb-6 group-hover:text-on-surface transition-colors">From obsidian saturation to liquid chrome balayage. Custom formulation for high-tension visual impact.</p>
+                <div class="flex justify-between items-end">
+                    <span class="font-display-xl text-4xl uppercase opacity-20 group-hover:opacity-100 transition-opacity">180+</span>
+                    <span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Card 3 (Spanning 2 cols) -->
+        <div class="service-card-item sm:col-span-2 p-8 border border-secondary-fixed hover:border-secondary-fixed transition-all group relative overflow-hidden h-96 flex flex-col justify-between opacity-0 animate-fade-in-up" style="animation-delay: 0.3s">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity bg-secondary-fixed"></div>
+            <div class="flex justify-between items-start relative z-10">
+                <div>
+                    <span class="font-label-caps text-label-caps text-secondary-fixed">03. ARCHITECT</span>
+                    <h3 class="font-headline-md text-headline-md uppercase mt-4 group-hover:text-on-background transition-colors">Creative Consultation</h3>
+                </div>
+                <img class="w-32 h-32 object-cover grayscale brightness-75 border border-outline-variant service-card-image" alt="Hair texture detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzbKrJRwDvMv38lwHe3RRH5YOXRjS8hwZ1tUHTZsRo_tlASvejX5p47odpn329IX8raTmgIUWqvYuyjLmFhFA5oH_DenmYug4gMg4lZQmHtKnHsidIarlBWa49rnYi4ykmz8dGbXB7r-33YlpdDP6CgAMwnpHAERHyLx4nr2-Imk2IP3a44z4h3rt6Ein59QZdmO027zAuDTbvJeHyIXadnsCLC3LijYpPFiSWix7HH30YuQYqyV6uvP_QJfvpSa3D1zQ3hAFuSss"/>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
+                <p class="font-body-md text-on-surface-variant max-w-md group-hover:text-on-surface transition-colors">The genesis of every transformation. Deep-dive session to map out long-term aesthetic goals and technical requirements.</p>
+                <button class="bg-on-surface text-surface py-4 px-12 font-label-caps text-label-caps uppercase hover:bg-secondary-fixed transition-all glitch-hover whitespace-nowrap animate-breathe hover:animate-none group-hover:scale-105">START</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Form Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-lowest relative overflow-hidden booking-form-section">
+    <div class="absolute inset-0 perspective-grid opacity-20 pointer-events-none"></div>
+    <div class="relative z-10 max-w-4xl mx-auto border-2 border-secondary py-16 px-8 md:px-16 glass-panel opacity-0 animate-scale-in">
+        <div class="text-center mb-16 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-4 accent-line inline-block">Request Access</h2>
+            <p class="font-label-caps text-label-caps text-secondary mt-6">COMPLETE THE DATA FIELDS BELOW</p>
+        </div>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 form-fields opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">
+            <div class="relative">
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">FULL NAME</label>
+                <input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none placeholder-surface-variant" placeholder="IDENTITY" type="text"/>
+            </div>
+            <div class="relative">
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">DIGITAL TRANSMISSION (EMAIL)</label>
+                <input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none placeholder-surface-variant" placeholder="USER@DOMAIN.COM" type="email"/>
+            </div>
+            <div class="relative">
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">SERVICE CATEGORY</label>
+                <select class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none appearance-none">
+                    <option class="bg-surface">SELECT PROTOCOL</option>
+                    <option class="bg-surface">PRECISION CUT</option>
+                    <option class="bg-surface">CHROMATIC VANGUARD</option>
+                    <option class="bg-surface">CREATIVE CONSULT</option>
+                    <option class="bg-surface">EDUCATION / WORKSHOP</option>
+                </select>
+            </div>
+            <div class="relative">
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PREFERRED TIMEFRAME</label>
+                <input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-2 font-body-lg text-body-lg outline-none placeholder-surface-variant" placeholder="QUARTER / MONTH" type="text"/>
+            </div>
+            <div class="md:col-span-2 relative">
+                <label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">AESTHETIC INTENT</label>
+                <textarea class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary-fixed focus:ring-0 transition-colors py-4 font-body-md text-body-md outline-none placeholder-surface-variant resize-none" placeholder="DESCRIBE THE DESIRED TRANSFORMATION..." rows="4"></textarea>
+            </div>
+            <div class="md:col-span-2 flex flex-col items-center mt-8">
+                <button class="w-full md:w-auto bg-on-surface text-surface py-6 px-24 font-headline-md text-headline-md uppercase hover:bg-secondary-fixed transition-all transform hover:scale-105 active:scale-95 border-b-4 border-r-4 border-on-surface-variant animate-breathe hover:animate-none" type="submit">SUBMIT REQUEST</button>
+                <p class="mt-6 font-label-caps text-[10px] text-on-surface-variant opacity-60">SUBMISSION DOES NOT GUARANTEE AN APPOINTMENT. WE CURATE CLIENT JOURNEYS CAREFULLY.</p>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Digital Contact Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-2 gap-gutter contact-section border-b border-outline-variant">
+    <div class="flex flex-col justify-center">
+        <span class="font-label-caps text-label-caps text-secondary-fixed mb-4 opacity-0 animate-fade-in-up">DIRECT CHANNELS</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-12 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">Digital<br/>Presence</h2>
+        <div class="flex flex-col gap-8">
+            <div class="group cursor-pointer opacity-0 animate-slide-in-right" style="animation-delay: 0.2s">
+                <p class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-secondary-fixed transition-colors">INSTAGRAM DM</p>
+                <p class="font-headline-md text-headline-md group-hover:text-secondary-fixed transition-colors group-hover:translate-x-2 transition-transform">@BLVCKCHROME.ARTISTRY</p>
+            </div>
+            <div class="group cursor-pointer opacity-0 animate-slide-in-right" style="animation-delay: 0.25s">
+                <p class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-secondary-fixed transition-colors">ENCRYPTED MESSAGE (WHATSAPP)</p>
+                <p class="font-headline-md text-headline-md group-hover:text-secondary-fixed transition-colors group-hover:translate-x-2 transition-transform">+1 800 VANGUARD</p>
+            </div>
+            <div class="group cursor-pointer opacity-0 animate-slide-in-right" style="animation-delay: 0.3s">
+                <p class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-secondary-fixed transition-colors">PRESS & PARTNERSHIPS</p>
+                <p class="font-headline-md text-headline-md group-hover:text-secondary-fixed transition-colors group-hover:translate-x-2 transition-transform">VIBE@BLVCKCHROME.COM</p>
+            </div>
+        </div>
+    </div>
+    <div class="relative min-h-[400px] border-l-2 border-outline-variant pl-gutter opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">
+        <div class="h-full w-full flex items-center justify-center bg-surface-container-high relative overflow-hidden group hover:shadow-lg transition-all duration-500">
+            <div class="relative z-10 text-center p-8 border-2 border-secondary-fixed group-hover:border-tertiary transition-colors duration-500 group-hover:scale-105 transform transition-transform duration-500">
+                <p class="font-headline-md text-headline-md uppercase italic">"Art is not a luxury.<br/>It is a necessity of<br/>the spirit."</p>
+            </div>
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary-fixed rounded-full blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-500 group-hover:bg-tertiary"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="w-full relative border-t border-outline-variant bg-surface-container-lowest footer-section">
+    <div class="flex flex-col w-full px-margin-mobile md:px-margin-desktop py-16 md:py-20 gap-unit">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-20">
+            <div class="opacity-0 animate-slide-in-right">
+                <h2 class="font-headline-lg text-headline-lg-mobile md:font-headline-lg uppercase leading-tight text-on-surface">BLVCK<br/>CHROME</h2>
+            </div>
+            <div class="flex flex-col gap-6 md:gap-8">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-all duration-300 relative group opacity-0 animate-slide-in-right" style="animation-delay: 0.05s" href="#">
+                    Privacy Policy
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-all duration-300 relative group opacity-0 animate-slide-in-right" style="animation-delay: 0.1s" href="#">
+                    Terms of Service
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-all duration-300 relative group opacity-0 animate-slide-in-right" style="animation-delay: 0.15s" href="#">
+                    Press Inquiries
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed transition-all duration-300 relative group opacity-0 animate-slide-in-right" style="animation-delay: 0.2s" href="#">
+                    Sustainability
+                    <span class="absolute bottom-0 left-0 w-0 h-px bg-secondary-fixed group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-outline-variant pt-12 md:pt-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <p class="font-label-caps text-label-caps text-on-surface-variant opacity-70 opacity-0 animate-fade-in-up">© 2024 BLVCK CHROME ARTISTRY. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s">
+                <span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-secondary-fixed transition-colors transform hover:scale-110 hover:-rotate-12 transition-transform">share</span>
+                <span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-secondary-fixed transition-colors transform hover:scale-110 hover:rotate-12 transition-transform">language</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</main>
+
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-8 right-8 w-20 h-20 bg-secondary-fixed text-background rounded-full flex items-center justify-center shadow-2xl z-50 hover:rotate-12 transition-transform md:hidden">
+    <span class="material-symbols-outlined text-4xl">school</span>
+</button>
+
+<script>
+    // Smooth scroll with easing
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 1200;
+                let start = null;
+
+                function easeInOutCubic(t) {
+                    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                }
+
+                function animation(currentTime) {
+                    if (start === null) start = currentTime;
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = easeInOutCubic(progress);
+                    window.scrollTo(0, startPosition + distance * ease);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                requestAnimationFrame(animation);
+            }
+        });
+    });
+
+    // Parallax effect for hero section
+    const parallaxBg = document.getElementById('parallaxBg');
+    const parallaxContent = document.getElementById('parallaxContent');
+    let parallaxAnimationId;
+
+    function updateParallax() {
+        if (parallaxBg && parallaxContent) {
+            const scrollY = window.pageYOffset;
+            const heroSection = document.querySelector('.parallax-hero');
+            if (!heroSection) return;
+
+            const heroTop = heroSection.offsetTop;
+            const heroHeight = heroSection.offsetHeight;
+            const scrollFromTop = scrollY - heroTop;
+
+            if (scrollFromTop < heroHeight + window.innerHeight) {
+                const bgOffset = scrollY * 0.5;
+                const contentOffset = scrollY * 0.3;
+                parallaxBg.style.transform = `translate3d(0, ${bgOffset}px, 0)`;
+                parallaxContent.style.transform = `translate3d(0, ${contentOffset}px, 0)`;
+            }
+        }
+    }
+
+    if (parallaxBg && parallaxContent) {
+        window.addEventListener('scroll', () => {
+            cancelAnimationFrame(parallaxAnimationId);
+            parallaxAnimationId = requestAnimationFrame(updateParallax);
+        }, { passive: true });
+    }
+
+    // Studio section parallax
+    const studioSection = document.querySelector('.studio-section');
+    const studioImage = document.querySelector('.studio-image');
+    let studioAnimationId;
+
+    function updateStudioParallax() {
+        if (studioSection && studioImage) {
+            const scrollY = window.pageYOffset;
+            const sectionTop = studioSection.offsetTop;
+            const sectionHeight = studioSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const distanceFromTop = scrollY - sectionTop + viewportHeight;
+
+            if (distanceFromTop > 0 && distanceFromTop < sectionHeight + viewportHeight) {
+                const parallaxOffset = (distanceFromTop - viewportHeight / 2) * 0.15;
+                studioImage.style.transform = `translate3d(0, ${parallaxOffset}px, 0)`;
+
+                const scrollPercentage = Math.max(0, Math.min(1, distanceFromTop / (sectionHeight + viewportHeight)));
+                studioImage.style.filter = `grayscale(${Math.round(100 - scrollPercentage * 20)}%)`;
+            }
+        }
+    }
+
+    if (studioSection && studioImage) {
+        window.addEventListener('scroll', () => {
+            cancelAnimationFrame(studioAnimationId);
+            studioAnimationId = requestAnimationFrame(updateStudioParallax);
+        }, { passive: true });
+    }
+
+    // Service cards parallax
+    const serviceMenuSection = document.querySelector('.service-menu-section');
+    const serviceCards = document.querySelectorAll('.service-card-item');
+    let serviceAnimationId;
+
+    function updateServiceParallax() {
+        if (serviceCards.length > 0 && serviceMenuSection) {
+            const scrollY = window.pageYOffset;
+            const sectionTop = serviceMenuSection.offsetTop;
+            const sectionHeight = serviceMenuSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const distanceFromTop = scrollY - sectionTop + viewportHeight;
+
+            if (distanceFromTop > 0 && distanceFromTop < sectionHeight + viewportHeight) {
+                serviceCards.forEach((card, index) => {
+                    const speed = 0.1 + (index * 0.05);
+                    const parallaxOffset = (distanceFromTop - viewportHeight / 2) * speed;
+                    card.style.transform = `translate3d(0, ${parallaxOffset}px, 0)`;
+                });
+            }
+        }
+    }
+
+    if (serviceCards.length > 0) {
+        window.addEventListener('scroll', () => {
+            cancelAnimationFrame(serviceAnimationId);
+            serviceAnimationId = requestAnimationFrame(updateServiceParallax);
+        }, { passive: true });
+    }
+
+    // Scroll reveal animations
+    const revealSections = ['.artistry-details', '.training-cta', '.booking-form-section', '.footer-section'];
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const elements = entry.target.querySelectorAll('[style*="opacity-0"]');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                    }, index * 50);
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealSections.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) revealObserver.observe(element);
+    });
+
+    // Form field animations
+    const formFields = document.querySelectorAll('.form-fields input, .form-fields select, .form-fields textarea');
+    formFields.forEach(field => {
+        field.addEventListener('focus', () => {
+            field.parentElement.style.transform = 'translateY(-2px)';
+            field.parentElement.style.boxShadow = '0 0 20px rgba(210, 240, 6, 0.1)';
+        });
+        field.addEventListener('blur', () => {
+            field.parentElement.style.transform = 'translateY(0)';
+            field.parentElement.style.boxShadow = 'none';
+        });
+    });
+
+    // Scroll progress indicator
+    window.addEventListener('scroll', () => {
+        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        document.documentElement.style.setProperty('--scroll-progress', `${scrollPercentage}%`);
+    }, { passive: true });
+
+    const style = document.createElement('style');
+    style.textContent = `
+        html::before {
+            width: var(--scroll-progress, 0%);
+            transition: width 0.1s ease-out;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Thick flowing striped line animation
+    const flowingLine = document.getElementById('flowingLine');
+    const nav = document.querySelector('nav');
+    let flowLineAnimationId;
+
+    function updateFlowingLine() {
+        if (flowingLine && nav) {
+            const scrollY = window.pageYOffset;
+            const navButton = nav.querySelector('button');
+            if (!navButton) return;
+
+            const buttonRect = navButton.getBoundingClientRect();
+            const buttonCenterX = window.innerWidth < 768 ? window.innerWidth / 2 : buttonRect.left + buttonRect.width / 2;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            flowingLine.style.left = `${buttonCenterX - 40}px`;
+            flowingLine.style.height = `${scrollY}px`;
+
+            const scrollPercent = Math.min(scrollY / (documentHeight - window.innerHeight), 1);
+            flowingLine.style.opacity = `${0.4 + scrollPercent * 0.45}`;
+
+            flowingLine.style.backgroundPosition = `0px ${(scrollY * 0.5) % 40}px`;
+        }
+    }
+
+    if (flowingLine) {
+        window.addEventListener('scroll', () => {
+            cancelAnimationFrame(flowLineAnimationId);
+            flowLineAnimationId = requestAnimationFrame(updateFlowingLine);
+        }, { passive: true });
+
+        updateFlowingLine();
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
+                mobileMenu.style.maxHeight = '0px';
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0px';
+            });
+        });
+    }
+</script>
+
+</body>
+</html>

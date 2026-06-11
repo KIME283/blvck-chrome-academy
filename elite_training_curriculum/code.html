@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Training | BLVCK CHROME</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#282a2b",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-secondary-container": "#5b6900",
+                    "on-background": "#e2e2e2",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-surface-variant": "#c4c7c7",
+                    "primary-container": "#050505",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-surface": "#e2e2e2",
+                    "surface-dim": "#121414",
+                    "secondary": "#fcffdd",
+                    "on-tertiary-fixed": "#3c0029",
+                    "secondary-fixed": "#d2f006",
+                    "secondary-container": "#cfed00",
+                    "error": "#ffb4ab",
+                    "tertiary-container": "#12000a",
+                    "surface-container": "#1e2020",
+                    "outline": "#8e9192",
+                    "surface": "#121414",
+                    "error-container": "#93000a",
+                    "on-primary-container": "#797777",
+                    "on-tertiary": "#610045",
+                    "on-secondary": "#2c3400",
+                    "inverse-primary": "#5f5e5e",
+                    "surface-container-highest": "#333535",
+                    "tertiary": "#ffaed8",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#e000a4",
+                    "tertiary-fixed-dim": "#ffaed8",
+                    "outline-variant": "#444748",
+                    "on-secondary-fixed": "#191e00",
+                    "surface-container-low": "#1a1c1c",
+                    "inverse-surface": "#e2e2e2",
+                    "surface-variant": "#333535",
+                    "primary": "#c9c6c5",
+                    "tertiary-fixed": "#ffd8e9",
+                    "inverse-on-surface": "#2f3131",
+                    "background": "#121414",
+                    "on-primary": "#313030",
+                    "on-tertiary-fixed-variant": "#890063",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "secondary-fixed-dim": "#b8d300",
+                    "on-secondary-fixed-variant": "#414c00",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#37393a",
+                    "surface-tint": "#c9c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "section-gap": "160px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Syne"],
+                    "headline-md": ["Syne"],
+                    "headline-lg": ["Syne"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-xl": ["Syne"],
+                    "display-xl-mobile": ["Syne"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["40px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-xl": ["120px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glitch-hover:hover {
+            animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        .grain-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            opacity: 0.05;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #121414; }
+        ::-webkit-scrollbar-thumb { background: #d2f006; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden">
+<!-- Side Navigation Bar (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col h-screen py-10 justify-between fixed left-0 top-0 w-64 border-r-2 border-surface-variant bg-surface z-50">
+<div class="px-6 space-y-12">
+<div class="flex flex-col gap-2">
+<span class="font-headline-lg text-headline-lg uppercase tracking-tighter text-on-surface">BLVCK</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-50">Luxury Brutalist Hair</span>
+</div>
+<div class="flex flex-col gap-6">
+<a class="group flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-colors duration-300 pl-4" href="#">
+<span class="material-symbols-outlined" data-icon="scissortail">monorail</span>
+<span class="font-label-caps text-label-caps">Vanguard Artistry</span>
+</a>
+<a class="group flex items-center gap-4 text-secondary-fixed font-bold border-l-4 border-secondary-fixed pl-4 translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-caps text-label-caps">Elite Training</span>
+</a>
+<a class="group flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-colors duration-300 pl-4" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-caps text-label-caps">The Collective</span>
+</a>
+<a class="group flex items-center gap-4 text-on-surface-variant hover:text-on-surface transition-colors duration-300 pl-4" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-caps text-label-caps">Studio Booking</span>
+</a>
+</div>
+</div>
+<div class="px-6">
+<button class="w-full py-4 bg-on-background text-background font-label-caps text-label-caps hover:bg-secondary-fixed transition-all duration-300 transform hover:-translate-y-1">
+                BOOK NOW
+            </button>
+<div class="flex gap-4 mt-8 opacity-40">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed" data-icon="camera">camera</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed" data-icon="videocam">videocam</span>
+</div>
+</div>
+</nav>
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 bg-transparent backdrop-blur-xl border-b-2 border-outline-variant fixed top-0 z-50">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-on-surface">BLVCK</span>
+<button class="material-symbols-outlined text-on-surface" data-icon="menu">menu</button>
+</header>
+<main class="md:pl-64">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-end justify-start overflow-hidden pt-24 md:pt-0">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale opacity-60 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr-Zi5PYLAMcjNzqoie1-tGJgtnA5lHM5nVmlv4oZFDqTYvOkiJM5xs9RuHXlpfCnWg8rY1YiKZphzCA4yf1blxkEKZmJDfHvAeEtxSxP_1euB68aQxZnoeiKUEvKeFsrkmFxknA2IhQbuJL5Vq13VaGuW33I3Op3ZP4rN4paFla_zdD1j8YISz-0FxrzYwwUTikZab0f8hscI94JIhKW5kY2VcQjoVigbR7rtcF99cWkaIUPC5tXk_dzIE_s6Lz73t7cyXRaI1ro"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop pb-24 max-w-5xl">
+<span class="inline-block font-label-caps text-label-caps text-secondary-fixed border-2 border-secondary-fixed px-4 py-1 mb-8">ACADEMY STATUS: ENROLLING</span>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-8">ELITE<br/>TRAINING</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Transcend traditional cosmetology. Master the architecture of movement and the physics of chrome-grade finishing in our industrial lab.
+                </p>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 right-margin-desktop hidden md:flex flex-col items-center gap-4 rotate-90 origin-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SCROLL TO ASCEND</span>
+<div class="w-24 h-px bg-on-surface-variant opacity-30"></div>
+</div>
+</section>
+<!-- Curriculum Grid -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div>
+<span class="font-label-caps text-label-caps text-tertiary">01 / CURRICULUM</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mt-4">VANGUARD<br/>MODULES</h2>
+</div>
+<div class="w-full md:w-1/3 h-px bg-outline-variant mb-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-unit">
+<!-- Course Item 1 -->
+<div class="md:col-span-8 group relative border-2 border-surface-variant bg-surface-container hover:border-secondary-fixed transition-all duration-500 overflow-hidden min-h-[400px]">
+<div class="absolute inset-0 grain-overlay"></div>
+<div class="relative z-10 p-8 md:p-12 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-40">M-01</span>
+<span class="material-symbols-outlined text-4xl text-secondary-fixed opacity-0 group-hover:opacity-100 transition-opacity" data-icon="architecture">architecture</span>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-md text-headline-lg-mobile md:text-headline-md mb-4 group-hover:translate-x-4 transition-transform duration-500">STRUCTURAL GEOMETRY</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Deconstructing traditional shapes through surgical precision cutting. Analyzing skull mapping and gravitational influence on hair weight distribution.</p>
+</div>
+</div>
+</div>
+<!-- Course Item 2 -->
+<div class="md:col-span-4 group relative border-2 border-surface-variant bg-tertiary-container hover:border-tertiary transition-all duration-500 overflow-hidden min-h-[400px]">
+<div class="relative z-10 p-8 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-40">M-02</span>
+<span class="material-symbols-outlined text-4xl text-tertiary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="experiment">experiment</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-4 transition-transform duration-500">COLOR ALCHEMY</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The science of high-contrast tonality. Mastering iridescent transitions and obsidian-depth saturation.</p>
+</div>
+</div>
+</div>
+<!-- Course Item 3 -->
+<div class="md:col-span-6 group relative border-2 border-surface-variant bg-surface hover:border-secondary-fixed transition-all duration-500 overflow-hidden min-h-[400px]">
+<div class="relative z-10 p-8 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-40">M-03</span>
+<span class="material-symbols-outlined text-4xl text-secondary-fixed opacity-0 group-hover:opacity-100 transition-opacity" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-4 transition-transform duration-500">CHROME TECHNIQUES</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Achieving the signature BLVCK liquid-metal finish. High-speed dryer handling and product chemical layering.</p>
+</div>
+</div>
+</div>
+<!-- Course Item 4 -->
+<div class="md:col-span-6 group relative border-2 border-surface-variant bg-surface-container-high hover:border-secondary-fixed transition-all duration-500 overflow-hidden min-h-[400px]">
+<div class="relative z-10 p-8 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-40">M-04</span>
+<span class="material-symbols-outlined text-4xl text-secondary-fixed opacity-0 group-hover:opacity-100 transition-opacity" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-4 transition-transform duration-500">INDUSTRIAL STYLING</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Editorial hair for extreme environments. Designing for longevity, movement, and the high-tension aesthetic of the BLVCK universe.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Lab Section -->
+<section class="relative py-section-gap overflow-hidden">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 pointer-events-none opacity-5">
+<span class="font-display-xl text-display-xl leading-none">VANGUARD LAB</span>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 z-10">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4 block">02 / ENVIRONMENT</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">BRUTALIST<br/>BATTLEFIELD</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                        Our studio isn't a classroom—it's an arena. Raw concrete, neon telemetry, and state-of-the-art optical mirrors provide the high-pressure feedback necessary for growth.
+                    </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 py-4 border-b border-outline-variant group">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-label-caps text-label-caps group-hover:translate-x-2 transition-transform">360° MACRO CAMERA SYSTEM</span>
+</div>
+<div class="flex items-center gap-4 py-4 border-b border-outline-variant group">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-label-caps text-label-caps group-hover:translate-x-2 transition-transform">PROPRIETARY CHEMICAL LAB</span>
+</div>
+<div class="flex items-center gap-4 py-4 border-b border-outline-variant group">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-label-caps text-label-caps group-hover:translate-x-2 transition-transform">HIGH-TENSION ERGONOMIC STATIONS</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 relative h-[600px] mt-12 md:mt-0">
+<img class="w-full h-full object-cover border-4 border-secondary-fixed grayscale" data-alt="A high-contrast wide shot of a modern, brutalist hair salon interior at night. The space features polished dark concrete floors, exposed brick walls, and industrial black steel beams. Neon blue and purple light strips wrap around the structural elements, reflecting off sleek black styling stations and large mirrors. The atmosphere is professional, elite, and intensely focused, resembling a high-tech underground laboratory for hair artistry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGk5pt4TP1MBzh26BOyIZzw7sVMAMlW0g6S6lk3S6KZeVin2Jru4PC-UF0OpCXBm4o3-tTVdZZ9U7FEqcZGaE5fVzwIp3J9hD4wNCO4dPdgqzYeRWBrUc1m4TDml5Xm4YIkEskXaPgr8D0KTfX9E96jGw_VWm8nJb5KzdFDC0FoO-y8sTy_nGDhnHVXQ5WXgXUNR_tZn01-7UEwlPaBpJywT5wmfGIZVs7W-W-GaKvUcm4H3fs_LIX6utcXp2bLCS7dzxzXo8fl4"/>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 border-2 border-tertiary -z-10 animate-pulse"></div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 overflow-hidden opacity-10">
+<div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, #d2f006 0, #d2f006 1px, transparent 0, transparent 50%); background-size: 40px 40px;"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mx-auto">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block tracking-[0.3em]">LIMITED COHORTS AVAILABLE</span>
+<h2 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface mb-12 italic">EVOLVE OR DECAY.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="px-12 py-6 bg-on-background text-background font-label-caps text-label-caps text-lg glitch-hover transform hover:scale-105 transition-all">
+                        REQUEST ENROLLMENT
+                    </button>
+<button class="px-12 py-6 border-2 border-secondary-fixed text-secondary-fixed font-label-caps text-label-caps text-lg hover:bg-secondary-fixed hover:text-background transition-all">
+                        DOWNLOAD SYLLABUS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full relative mt-section-gap border-t-4 border-secondary bg-surface-container-lowest">
+<div class="flex flex-col w-full px-margin-desktop py-margin-desktop gap-unit">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+<span class="font-display-xl text-display-xl font-extrabold text-on-surface uppercase">BLVCK<br/>CHROME</span>
+<div class="flex flex-col gap-4 text-right">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Press Inquiries</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:italic transition-all duration-300" href="#">Sustainability</a>
+</div>
+</div>
+<div class="mt-24 border-t border-outline-variant pt-8 flex flex-col md:flex-row justify-between items-center opacity-50">
+<p class="font-label-caps text-label-caps">© 2024 BLVCK CHROME ARTISTRY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 mt-4 md:mt-0">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary" data-icon="share">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary" data-icon="language">language</span>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-8 right-8 w-20 h-20 bg-secondary-fixed text-background rounded-full flex items-center justify-center shadow-2xl z-50 hover:rotate-12 transition-transform md:hidden">
+<span class="material-symbols-outlined text-4xl" data-icon="school" data-weight="fill">school</span>
+</button>
+<script>
+        // Hover interaction for curriculum cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.transform = 'rotate(-10deg) scale(1.2)';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg) scale(1)';
+                }
+            });
+        });
+    </script>
+</body></html>

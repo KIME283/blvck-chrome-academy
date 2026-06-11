@@ -1,0 +1,17 @@
+{
+  "name": "blvck-chrome-academy",
+  "version": "1.0.0",
+  "description": "BLVCK CHROME - Elite Salon Training Academy. Luxury brutalist hair artistry and education.",
+  "main": "index.html",
+  "keywords": [
+    "salon",
+    "academy",
+    "hair",
+    "training",
+    "artistry",
+    "luxury",
+    "brutalist"
+  ],
+  "author": "BLVCK CHROME",
+  "license": "MIT"
+}
